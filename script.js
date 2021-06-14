@@ -56,13 +56,11 @@ function createErrorCard(msg) {
             <h1>${msg}</h1>
         </div>
     `
-
     main.innerHTML = cardHTML
 }
 
 function addReposToCard(repos) {
     const reposEl = document.getElementById('repos')
-
     repos
         .slice(0, 5)
         .forEach(repo => {
@@ -71,20 +69,14 @@ function addReposToCard(repos) {
             repoEl.href = repo.html_url
             repoEl.target = '_blank'
             repoEl.innerText = repo.name
-
             reposEl.appendChild(repoEl)
         })
 }
-
 form.addEventListener('submit', (e) => {
     e.preventDefault()
-
     const user = search.value
-
     if(user) {
         getUser(user)
-
         search.value = ''
     }
 })
-
